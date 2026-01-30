@@ -1,0 +1,47 @@
+:root {
+  --background: #ffffff;
+  --surface: #DDC8A6;/*boxes, buttons and cards*/
+  --text: #141111;
+
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #141111;
+    --surface: #DDC8A6;
+    --text: #ffffff;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
