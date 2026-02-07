@@ -1,44 +1,16 @@
 import styles from "./page.module.css";
+import Sidebar from "./components/sidebar";
+import Header from "./components/header";
+import Footer from "./components/footer";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className={styles.layout}>
-      {/* Sidebar will become a component next week*/}
-      <aside className={styles.sidebar}>
-        <Image
-            src="/logowithouttext.png"
-            alt="Art Crafted For You logo"
-            width={140}
-            height={140}
-          />
-
-        <nav className={styles.nav}>
-          <a href="#">Home</a>
-          <a href="#">Artists</a>
-          <a href="#">Arts</a>
-          <a href="#">Feedback</a>
-          <a href="#">Share</a>
-        </nav>
-      </aside>
+      <Sidebar />
 
       <main className={styles.page}>
-        {/* Header will become a component next week*/}
-        <header className={styles.header}>
-          <Image
-            src="/artcraftedlogo.png"
-            alt="Art Crafted For You logo"
-            width={200}
-            height={200}
-            className={styles.logoHeader}
-          />
-
-          <input
-            type="text"
-            placeholder="Type here for search 🔍"
-            className={styles.search}
-          />
-          </header>
+        <Header />
 
         <section className={styles.grid}>
           <div className={styles.card}>
@@ -72,10 +44,7 @@ export default function Home() {
           </div>
         </section>
 
-{/* Footer will become a component next week*/}
-        <footer className={styles.footer}>
-          <p>&copy; 2026 Bruno Teixeira – WDD430 – BYU Idaho</p>
-        </footer>
+        <Footer />
       </main>
     </div>
   );
