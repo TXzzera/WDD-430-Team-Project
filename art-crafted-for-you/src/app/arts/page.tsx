@@ -1,8 +1,13 @@
+"use client";
+
 import styles from "../page.module.css";
 import Sidebar from "../components/sidebar";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import ArtCard from "../components/artCard";
+import { useState } from "react";
+import Filter from "../components/filter";
+
 
 export default function ArtsPage() {
   const arts = [
@@ -103,6 +108,13 @@ export default function ArtsPage() {
   },
 ];
 
+
+  const [selectedArtist, setSelectedArtist] = useState("");
+  const artists = Array.from(new Set(arts.map((art) => art.artist)));
+  const filteredArts = arts.filter(
+    (art) => !selectedArtist || art.artist === selectedArtist
+  );
+
   return (
     <div className={styles.layout}>
       <Sidebar />
@@ -113,8 +125,13 @@ export default function ArtsPage() {
         <section>
           <h1 className={styles.artsTitle}>Appreciate the Arts</h1>
 
+          <Filter
+            artists={artists}
+            onChange={({ artist }) => setSelectedArtist(artist || "")}
+          />
+
           <div className={styles.artsGrid}>
-            {arts.map((art) => (
+            {filteredArts.map((art) => (
               <ArtCard
                 key={art.id}
                 name={art.name}

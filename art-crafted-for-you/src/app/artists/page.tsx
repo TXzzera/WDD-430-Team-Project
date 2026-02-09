@@ -1,8 +1,11 @@
+"use client";
+
 import styles from "../page.module.css";
 import Sidebar from "../components/sidebar";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import ArtistCard from "../components/artistCard";
+
 
 export default function ArtistsPage() {
   const artists = [

@@ -4,8 +4,8 @@
 }
 
 .page {
-  flex: 1;             
-  padding: 2rem 4rem;    
+  flex: 1;
+  padding: 2rem 4rem;
   background-color: var(--background);
 }
 
@@ -31,7 +31,6 @@
   outline: none;
 }
 
-
 .sidebar {
   width: 220px;
   background-color: var(--surface);
@@ -39,7 +38,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem; 
+  gap: 3rem;
 }
 
 .nav {
@@ -55,26 +54,15 @@
   font-weight: 600;
   padding: 0.75rem 1rem;
   border-radius: 8px;
-  color: var(--text-primary);
-  text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.nav a:hover {
-  background-color: rgba(212, 175, 55, 0.15);
-  transform: translateX(4px);
-}
-
-
-.nav a {
   color: var(--text);
   text-decoration: none;
   opacity: 0.8;
   padding-left: 1rem;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 
 .nav a:hover {
+  background-color: rgba(212, 175, 55, 0.15);
   opacity: 1;
   transform: translateX(6px);
 }
@@ -91,7 +79,6 @@
   opacity: 1;
 }
 
-
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(620px, 660px));
@@ -99,14 +86,13 @@
   justify-content: center;
 }
 
-
 .card {
   background-color: var(--surface);
   padding: 3rem;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   gap: 1rem;
   text-align: center;
   cursor: pointer;
@@ -119,7 +105,8 @@
   transform: translateY(-4px);
 }
 
-.artistsTitle {
+.artistsTitle,
+.artsTitle {
   text-align: center;
   font-size: 2.8rem;
   font-weight: 700;
@@ -129,7 +116,8 @@
   position: relative;
 }
 
-.artistsTitle::after {
+.artistsTitle::after,
+.artsTitle::after {
   content: "";
   display: block;
   width: 80px;
@@ -152,7 +140,7 @@
   border-radius: 16px;
   padding: 2.5rem 2rem;
   text-align: center;
-  border: 2px solid #d4af37; 
+  border: 2px solid #d4af37;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
@@ -176,26 +164,6 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: #333;
-}
-
-.artsTitle {
-  text-align: center;
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  color: #2b2b2b;
-  letter-spacing: 1px;
-  position: relative;
-}
-
-.artsTitle::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background-color: #d4af37;
-  margin: 1rem auto 0;
-  border-radius: 2px;
 }
 
 .artsGrid {
@@ -234,13 +202,6 @@
   border-radius: 0;
 }
 
-
-.price {
-  margin-top: auto;
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
 .artCard h3 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -253,6 +214,163 @@
   color: #555;
 }
 
+.price {
+  margin-top: auto;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.feedbackGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.reviewCard {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+
+.reviewCard p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.reviewArtist {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.reviewUser {
+  font-size: 0.8rem;
+  color: #999;
+  font-style: italic;
+}
+
+.reviewForm {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.reviewForm input,
+.reviewForm select,
+.reviewForm textarea {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1.5px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reviewForm input:focus,
+.reviewForm select:focus,
+.reviewForm textarea:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+}
+
+.reviewForm textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.reviewForm button {
+  width: 100%;
+  margin-top: 1.2rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #2b2b2b;
+  color: #fff;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.reviewForm button:hover {
+  background-color: var(--surface);
+  color: #2b2b2b;
+  transform: translateY(-2px);
+}
+
+.reviewForm button:active {
+  transform: translateY(0);
+}
+
+.sharePage {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.sharePage p {
+  color: #555;
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  max-width: 700px;
+}
+
+.shareButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.shareButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  background-color: var(--surface);
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.shareButton:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.instagramBox {
+  border: 1px dashed #ccc;
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: left;
+}
+
+.instagramHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.instagramBox input {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
 
 .footer {
   margin-top: 4rem;
@@ -262,6 +380,7 @@
   color: var(--text);
   opacity: 0.7;
 }
+
 .footer p {
   margin: 0;
 }
