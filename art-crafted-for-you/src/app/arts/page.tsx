@@ -10,14 +10,15 @@ import Filter from "../components/filter";
 
 
 export default function ArtsPage() {
-  const arts = [
-  //Ana Antunes — wooden animal sculptures
+ const arts = [
+  // Ana Antunes — wooden animal sculptures
   {
     id: 1,
     name: "Wooden Fox Sculpture",
     price: 70,
     image: "/arts/wooden-fox.png",
     artist: "Ana Antunes",
+    link: "/arts/1",
   },
   {
     id: 2,
@@ -25,15 +26,17 @@ export default function ArtsPage() {
     price: 70,
     image: "/arts/wooden-owl.png",
     artist: "Ana Antunes",
+    link: "/arts/2",
   },
 
-  //Lucas Louza — wooden wall art/panels
+  // Lucas Louza — wooden wall art/panels
   {
     id: 3,
     name: "Wood Fisherman Panel",
     price: 145,
     image: "/arts/wood-panel-fisherman.png",
     artist: "Lucas Louza",
+    link: "/arts/3",
   },
   {
     id: 4,
@@ -41,15 +44,17 @@ export default function ArtsPage() {
     price: 235,
     image: "/arts/aztec-wood-art.png",
     artist: "Lucas Louza",
+    link: "/arts/4",
   },
 
-  //Beatriz Barros — biscuit characters
+  // Beatriz Barros — biscuit characters
   {
     id: 5,
     name: "Biscuit Mario Characters",
     price: 80,
     image: "/arts/biscuit-mario.png",
     artist: "Beatriz Barros",
+    link: "/arts/5",
   },
   {
     id: 6,
@@ -57,15 +62,17 @@ export default function ArtsPage() {
     price: 45,
     image: "/arts/biscuit-spongebob.png",
     artist: "Beatriz Barros",
+    link: "/arts/6",
   },
 
-  //Rafael Ramos — clay vases
+  // Rafael Ramos — clay vases
   {
     id: 7,
     name: "Rustic Clay Vase Kit",
     price: 110,
     image: "/arts/rustic-vase-kit.png",
     artist: "Rafael Ramos",
+    link: "/arts/7",
   },
   {
     id: 8,
@@ -73,15 +80,17 @@ export default function ArtsPage() {
     price: 90,
     image: "/arts/ornate-vase.png",
     artist: "Rafael Ramos",
+    link: "/arts/8",
   },
 
-  //Marina Moura — crochet dolls and animals
+  // Marina Moura — crochet dolls and animals
   {
     id: 9,
     name: "Crochet Doll Girl",
     price: 30,
     image: "/arts/crochet-doll.png",
     artist: "Marina Moura",
+    link: "/arts/9",
   },
   {
     id: 10,
@@ -89,15 +98,17 @@ export default function ArtsPage() {
     price: 42,
     image: "/arts/crochet-bunny.png",
     artist: "Marina Moura",
+    link: "/arts/10",
   },
 
-  //João Jorge — realistic paintings
+  // João Jorge — realistic paintings
   {
     id: 11,
     name: "Messi Realistic Painting",
     price: 250,
     image: "/arts/messi-painting.png",
     artist: "João Jorge",
+    link: "/arts/11",
   },
   {
     id: 12,
@@ -105,9 +116,9 @@ export default function ArtsPage() {
     price: 200,
     image: "/arts/lyon-painting.png",
     artist: "João Jorge",
+    link: "/arts/12",
   },
 ];
-
 
   const [selectedArtist, setSelectedArtist] = useState("");
   const artists = Array.from(new Set(arts.map((art) => art.artist)));
@@ -134,6 +145,7 @@ export default function ArtsPage() {
             {filteredArts.map((art) => (
               <ArtCard
                 key={art.id}
+                id={art.id}
                 name={art.name}
                 price={art.price}
                 image={art.image}

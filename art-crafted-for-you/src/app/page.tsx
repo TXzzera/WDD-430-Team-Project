@@ -3,6 +3,7 @@ import Sidebar from "./components/sidebar";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -13,17 +14,17 @@ export default function Home() {
         <Header />
 
         <section className={styles.grid}>
-          <div className={styles.card}>
+          <Link href="/artists" className={styles.card}>
             <Image src="/artists.png" alt="Artists" width={200} height={200} />
             <p>Get to know our artists!</p>
-          </div>
+          </Link>
 
-          <div className={styles.card}>
+          <Link href="/arts" className={styles.card}>
             <Image src="/arts.png" alt="Arts" width={200} height={200} />
             <p>Get to know their arts!</p>
-          </div>
+          </Link>
 
-          <div className={styles.card}>
+          <Link href="/feedback" className={styles.card}>
             <Image
               src="/feedback_satisfaction.svg"
               alt="Feedback"
@@ -31,9 +32,9 @@ export default function Home() {
               height={200}
             />
             <p>Give your feedback</p>
-          </div>
+          </Link>
 
-          <div className={styles.card}>
+          <Link href="/share" className={styles.card}>
             <Image
               src="/social_media.png"
               alt="Social Media"
@@ -41,7 +42,7 @@ export default function Home() {
               height={200}
             />
             <p>Share our work</p>
-          </div>
+          </Link>
         </section>
 
         <Footer />

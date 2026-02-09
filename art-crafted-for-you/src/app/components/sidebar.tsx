@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../page.module.css";
 
 export default function Sidebar() {
@@ -13,11 +14,11 @@ export default function Sidebar() {
       />
 
       <nav className={styles.nav}>
-        <a href="#">Home</a>
-        <a href="#">Artists</a>
-        <a href="#">Arts</a>
-        <a href="#">Feedback</a>
-        <a href="#">Share</a>
+        <Link href="/">Home</Link>
+        <Link href="/artists">Artists</Link>
+        <Link href="/arts">Arts</Link>
+        <Link href="/feedback">Feedback</Link>
+        <Link href="/share">Share</Link>
       </nav>
     </aside>
   );

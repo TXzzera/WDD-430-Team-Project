@@ -10,25 +10,88 @@
 }
 
 .header {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
   margin-bottom: 4rem;
 }
 
 .logoHeader {
   grid-column: 2;
   justify-self: center;
+  width: 250px;
+  height: 250px;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* logo centralizada */
+  width: 100%;
+  position: relative;
+}
+
+/* botão de login à direita */
+.topBar {
+  position: absolute;
+  right: 2rem; /* distancia da borda direita */
+  display: flex;
+  gap: 1rem;
+}
+
+.loginButton {
+  background-color: rgb(9, 98, 128);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.loginButton:hover {
+  background-color: orangered;
+}
+
+/* barra de pesquisa abaixo do botão */
+.searchContainer {
+  width: 250px;
+  position: relative;
+  align-self: flex-end; /* alinha à direita */
 }
 
 .search {
-  grid-column: 3;
-  justify-self: end;
+  width: 100%;
   padding: 0.6rem 1.2rem;
   border-radius: 999px;
   border: none;
   background-color: var(--surface);
   outline: none;
+}
+
+.searchResults {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background-color: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  margin-top: 5px;
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.searchResults div {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.searchResults div:hover {
+  background-color: rgba(212, 175, 55, 0.15);
 }
 
 .sidebar {
@@ -370,6 +433,108 @@
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 0.9rem;
+}
+
+.artistDetail {
+  text-align: center;
+  padding: 2rem;
+}
+
+.artistImageWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.artistImage {
+  border-radius: 50%; 
+  width: 250px;       
+  height: 250px;
+  object-fit: cover;
+  border: 3px solid rgb(207, 207, 207);
+}
+
+.artistBio {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 1rem auto 2rem auto;
+  line-height: 1.6;
+}
+
+.artistArts {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem; 
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.artCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.artCard img {
+  width: 200px; 
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px; 
+}
+
+.artCard p {
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.artistArts {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.artistArtCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #d9b44a;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.artistArtCard img {
+  border-radius: 10px;
+}
+
+.artistArtCard p {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.artistArtCard .buttonPrimary {
+  margin-top: auto;
+}
+
+
+.buttonPrimary {
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 12px; 
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttonPrimary:hover {
+  background-color: var(--surface); 
+  color: black; 
+  transform: scale(1.05);
 }
 
 .footer {
