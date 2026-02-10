@@ -604,25 +604,65 @@
   margin: 0;
 }
 
+@media (max-width: 1400px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .page {
+    padding: 2rem;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  .logoHeader {
+    width: 200px;
+    height: auto;
+  }
+}
+
 @media (max-width: 1024px) {
   .layout {
     flex-direction: column;
   }
+
   .sidebar {
     width: 100%;
+    height: auto;
     padding: 1rem;
     flex-direction: row;
     justify-content: center;
     gap: 1rem;
   }
+
   .nav {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
   }
-  .page {
-    padding: 1rem;
+
+  .nav a {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav a:hover {
+    transform: translateY(-3px);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
+  .artistsGrid, .artsGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
 }
 
@@ -630,69 +670,23 @@
   .topRow {
     flex-direction: column;
     gap: 1.5rem;
+    position: static;
   }
 
   .topBar {
     position: static;
-    display: flex;
     justify-content: center;
     width: 100%;
   }
 
   .searchContainer {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     align-self: center;
   }
-}
 
-@media (max-width: 650px) {
   .header {
     margin-bottom: 2rem;
-  }
-
-  .topRow {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .topBar {
-    position: static;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 0.8rem;
-  }
-
-  .logoHeader {
-    width: 150px;
-    height: 150px;
-  }
-
-  .searchContainer {
-    width: 90%;
-    align-self: center;
-  }
-
-  .nav {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-
-  .nav a {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-  }
-
-  .artistsTitle, .artsTitle {
-    font-size: 1.8rem;
-  }
-
-  .grid, .artistsGrid, .artsGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 
   .artDetailContent {
@@ -702,31 +696,40 @@
 
   .artDetailImage {
     width: 100%;
-    max-width: 300px;
-    height: auto;
+    max-width: 400px;
   }
 
   .feedbackGrid {
     grid-template-columns: 1fr;
   }
-
-  .priceTag {
-    font-size: 1.8rem;
-  }
 }
 
-@media (max-width: 480px) {
-  .nav {
-    grid-template-columns: 1fr;
+@media (max-width: 500px) {
+  .logoHeader {
+    width: 150px;
   }
-  
+
+  .artistsTitle, .artsTitle {
+    font-size: 1.8rem;
+  }
+
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+
   .artistImage {
     width: 140px;
     height: 140px;
   }
-  
-  .card {
-    padding: 1.5rem;
-    font-size: 1.2rem;
+
+  .artImage {
+    width: 160px;
+    height: 160px;
   }
 }
