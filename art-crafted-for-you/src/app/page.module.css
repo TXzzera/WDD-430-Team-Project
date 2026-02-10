@@ -626,6 +626,26 @@
   }
 }
 
+@media (max-width: 768px) {
+  .topRow {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .topBar {
+    position: static;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .searchContainer {
+    width: 100%;
+    max-width: 400px;
+    align-self: center;
+  }
+}
+
 @media (max-width: 650px) {
   .header {
     margin-bottom: 2rem;
