@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import styles from "../../page.module.css";
@@ -24,9 +25,16 @@ const arts = [
 
 export default function ArtPage() {
   const params = useParams();
+  const [isBought, setIsBought] = useState(false);
+  
   const art = arts.find(a => a.id === params.artId);
 
-  if (!art) return <p>Art not found</p>;
+  if (!art) return <p className={styles.container}>Art not found</p>;
+
+  const handleBuy = () => {
+    setIsBought(true);
+    setTimeout(() => setIsBought(false), 5000);
+  };
 
   return (
     <div className={styles.layout}>
@@ -34,13 +42,37 @@ export default function ArtPage() {
       <main className={styles.page}>
         <Header />
 
-        <section className={styles.artDetail}>
-          <h1>{art.name}</h1>
-          <p>By {art.artist}</p>
-          <Image src={art.image} alt={art.name} width={300} height={300} className={styles.artImage} />
-          <p>{art.description}</p>
-          <p>Price: ${art.price}</p>
-          <button className={styles.addToCartButton}>Add to Cart</button>
+        <section className={styles.artDetailContainer}>
+          <div className={styles.artDetailCard}>
+            <h1 className={styles.artsTitle}>{art.name}</h1>
+            
+            <div className={styles.artDetailContent}>
+              <Image 
+                src={art.image} 
+                alt={art.name} 
+                width={400} 
+                height={400} 
+                className={styles.artDetailImage} 
+              />
+              
+              <div className={styles.artDetailInfo}>
+                <p className={styles.artistName}>By <strong>{art.artist}</strong></p>
+                <p className={styles.artDescription}>{art.description}</p>
+                <p className={styles.priceTag}>${art.price}</p>
+                
+                {!isBought ? (
+                  <button className={styles.buttonPrimary} onClick={handleBuy}>
+                    Buy Now
+                  </button>
+                ) : (
+                   /*just a mocking*/
+                 <div className={styles.successMessage}>
+                    🎉 Bought! It will be delivered to your home soon! 
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         </section>
 
         <Footer />

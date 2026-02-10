@@ -27,15 +27,14 @@
 .topRow {
   display: flex;
   align-items: center;
-  justify-content: center; /* logo centralizada */
+  justify-content: center; 
   width: 100%;
   position: relative;
 }
 
-/* botão de login à direita */
 .topBar {
   position: absolute;
-  right: 2rem; /* distancia da borda direita */
+  right: 2rem; 
   display: flex;
   gap: 1rem;
 }
@@ -54,11 +53,10 @@
   background-color: orangered;
 }
 
-/* barra de pesquisa abaixo do botão */
 .searchContainer {
   width: 250px;
   position: relative;
-  align-self: flex-end; /* alinha à direita */
+  align-self: flex-end;
 }
 
 .search {
@@ -535,6 +533,62 @@
   background-color: var(--surface); 
   color: black; 
   transform: scale(1.05);
+}
+
+.artDetailContainer {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.artDetailCard {
+  background: linear-gradient(135deg, #fffdf7, #ffffff);
+  border-radius: 20px;
+  padding: 3rem;
+  border: 2px solid #d4af37;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.artistName {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.artDetailContent {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.artDetailImage {
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.artDetailInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.artDescription {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.priceTag {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #2b2b2b;
 }
 
 .footer {
