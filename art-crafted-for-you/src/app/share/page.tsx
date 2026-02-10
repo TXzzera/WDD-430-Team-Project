@@ -6,7 +6,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Image from "next/image";
 
-const SITE_URL = "https://mywebsitevercel.com"; /*I'll replace this with the actual URL when deploying*/
+const SITE_URL = "https://wdd-430-team-project-dj33.vercel.app/"; 
 
 export default function SharePage() {
   const encodedUrl = encodeURIComponent(SITE_URL);
